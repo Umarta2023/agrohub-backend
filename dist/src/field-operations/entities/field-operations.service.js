@@ -12,21 +12,21 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CropHistoryService = void 0;
+exports.FieldOperationsService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
-const crop_history_entity_1 = require("./entities/crop-history.entity");
-let CropHistoryService = class CropHistoryService {
-    cropHistoryRepository;
-    constructor(cropHistoryRepository) {
-        this.cropHistoryRepository = cropHistoryRepository;
+const field_operation_entity_1 = require("../entities/field-operation.entity");
+let FieldOperationsService = class FieldOperationsService {
+    fieldOperationRepository;
+    constructor(fieldOperationRepository) {
+        this.fieldOperationRepository = fieldOperationRepository;
     }
 };
-exports.CropHistoryService = CropHistoryService;
-exports.CropHistoryService = CropHistoryService = __decorate([
+exports.FieldOperationsService = FieldOperationsService;
+exports.FieldOperationsService = FieldOperationsService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, typeorm_1.InjectRepository)(crop_history_entity_1.CropHistory)),
+    __param(0, (0, typeorm_1.InjectRepository)(field_operation_entity_1.FieldOperation)),
     __metadata("design:paramtypes", [typeorm_2.Repository])
-], CropHistoryService);
-//# sourceMappingURL=crop-history.service.js.map
+], FieldOperationsService);
+//# sourceMappingURL=field-operations.service.js.map

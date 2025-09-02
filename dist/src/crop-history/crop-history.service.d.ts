@@ -1,9 +1,6 @@
-import { CreateCropHistoryDto } from './dto/create-crop-history.dto';
-import { UpdateCropHistoryDto } from './dto/update-crop-history.dto';
+import { Repository } from 'typeorm';
+import { CropHistory } from './entities/crop-history.entity';
 export declare class CropHistoryService {
-    create(createCropHistoryDto: CreateCropHistoryDto): string;
-    findAll(): string;
-    findOne(id: number): string;
-    update(id: number, updateCropHistoryDto: UpdateCropHistoryDto): string;
-    remove(id: number): string;
+    private readonly cropHistoryRepository;
+    constructor(cropHistoryRepository: Repository<CropHistory>);
 }

@@ -10,11 +10,18 @@ exports.CropHistoryModule = void 0;
 const common_1 = require("@nestjs/common");
 const crop_history_service_1 = require("./crop-history.service");
 const crop_history_controller_1 = require("./crop-history.controller");
+const typeorm_1 = require("@nestjs/typeorm");
+const crop_history_entity_1 = require("./entities/crop-history.entity");
+const fields_module_1 = require("../fields/fields.module");
 let CropHistoryModule = class CropHistoryModule {
 };
 exports.CropHistoryModule = CropHistoryModule;
 exports.CropHistoryModule = CropHistoryModule = __decorate([
     (0, common_1.Module)({
+        imports: [
+            typeorm_1.TypeOrmModule.forFeature([crop_history_entity_1.CropHistory]),
+            (0, common_1.forwardRef)(() => fields_module_1.FieldsModule),
+        ],
         controllers: [crop_history_controller_1.CropHistoryController],
         providers: [crop_history_service_1.CropHistoryService],
     })
