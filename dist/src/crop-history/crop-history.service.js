@@ -6,27 +6,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FieldOperationsService = void 0;
+exports.CropHistoryService = void 0;
 const common_1 = require("@nestjs/common");
-let FieldOperationsService = class FieldOperationsService {
-    create(createFieldOperationDto) {
-        return 'This action adds a new fieldOperation';
+let CropHistoryService = class CropHistoryService {
+    create(createCropHistoryDto) {
+        return 'This action adds a new cropHistory';
     }
     findAll() {
-        return `This action returns all fieldOperations`;
+        return `This action returns all cropHistory`;
     }
     findOne(id) {
-        return `This action returns a #${id} fieldOperation`;
+        return `This action returns a #${id} cropHistory`;
     }
-    update(id, updateFieldOperationDto) {
-        return `This action updates a #${id} fieldOperation`;
+    update(id, updateCropHistoryDto) {
+        return `This action updates a #${id} cropHistory`;
     }
     remove(id) {
-        return `This action removes a #${id} fieldOperation`;
+        return `This action removes a #${id} cropHistory`;
     }
 };
-exports.FieldOperationsService = FieldOperationsService;
-exports.FieldOperationsService = FieldOperationsService = __decorate([
+exports.CropHistoryService = CropHistoryService;
+exports.CropHistoryService = CropHistoryService = __decorate([
     (0, common_1.Injectable)()
-], FieldOperationsService);
-//# sourceMappingURL=field-operations.service.js.map
+], CropHistoryService);
+//# sourceMappingURL=crop-history.service.js.map

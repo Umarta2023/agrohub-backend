@@ -6,27 +6,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FieldOperationsService = void 0;
+exports.PurchasesService = void 0;
 const common_1 = require("@nestjs/common");
-let FieldOperationsService = class FieldOperationsService {
-    create(createFieldOperationDto) {
-        return 'This action adds a new fieldOperation';
+let PurchasesService = class PurchasesService {
+    create(createPurchaseDto) {
+        return 'This action adds a new purchase';
     }
     findAll() {
-        return `This action returns all fieldOperations`;
+        return `This action returns all purchases`;
     }
     findOne(id) {
-        return `This action returns a #${id} fieldOperation`;
+        return `This action returns a #${id} purchase`;
     }
-    update(id, updateFieldOperationDto) {
-        return `This action updates a #${id} fieldOperation`;
+    update(id, updatePurchaseDto) {
+        return `This action updates a #${id} purchase`;
     }
     remove(id) {
-        return `This action removes a #${id} fieldOperation`;
+        return `This action removes a #${id} purchase`;
     }
 };
-exports.FieldOperationsService = FieldOperationsService;
-exports.FieldOperationsService = FieldOperationsService = __decorate([
+exports.PurchasesService = PurchasesService;
+exports.PurchasesService = PurchasesService = __decorate([
     (0, common_1.Injectable)()
-], FieldOperationsService);
-//# sourceMappingURL=field-operations.service.js.map
+], PurchasesService);
+//# sourceMappingURL=purchases.service.js.map

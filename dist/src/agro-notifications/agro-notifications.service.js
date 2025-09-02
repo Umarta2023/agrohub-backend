@@ -6,27 +6,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FieldOperationsService = void 0;
+exports.AgroNotificationsService = void 0;
 const common_1 = require("@nestjs/common");
-let FieldOperationsService = class FieldOperationsService {
-    create(createFieldOperationDto) {
-        return 'This action adds a new fieldOperation';
+let AgroNotificationsService = class AgroNotificationsService {
+    create(createAgroNotificationDto) {
+        return 'This action adds a new agroNotification';
     }
     findAll() {
-        return `This action returns all fieldOperations`;
+        return `This action returns all agroNotifications`;
     }
     findOne(id) {
-        return `This action returns a #${id} fieldOperation`;
+        return `This action returns a #${id} agroNotification`;
     }
-    update(id, updateFieldOperationDto) {
-        return `This action updates a #${id} fieldOperation`;
+    update(id, updateAgroNotificationDto) {
+        return `This action updates a #${id} agroNotification`;
     }
     remove(id) {
-        return `This action removes a #${id} fieldOperation`;
+        return `This action removes a #${id} agroNotification`;
     }
 };
-exports.FieldOperationsService = FieldOperationsService;
-exports.FieldOperationsService = FieldOperationsService = __decorate([
+exports.AgroNotificationsService = AgroNotificationsService;
+exports.AgroNotificationsService = AgroNotificationsService = __decorate([
     (0, common_1.Injectable)()
-], FieldOperationsService);
-//# sourceMappingURL=field-operations.service.js.map
+], AgroNotificationsService);
+//# sourceMappingURL=agro-notifications.service.js.map

@@ -10,6 +10,7 @@ export class CropHistory {
   @Column()
   fieldId: string;
 
+  // forwardRef здесь тоже не нужен
   @ManyToOne(() => Field)
   @JoinColumn({ name: 'fieldId' })
   field: Field;
@@ -18,5 +19,5 @@ export class CropHistory {
   year: number;
 
   @Column()
-  crop: string; // Название культуры
+  crop: string;
 }

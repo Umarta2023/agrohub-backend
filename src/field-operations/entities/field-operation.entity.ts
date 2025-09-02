@@ -1,6 +1,7 @@
 // src/field-operations/entities/field-operation.entity.ts
 import { Field } from '../../fields/entities/field.entity';
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { forwardRef } from '@nestjs/common';
 
 @Entity('field_operations')
 export class FieldOperation {
@@ -10,12 +11,13 @@ export class FieldOperation {
   @Column()
   fieldId: string;
 
+  // ИСПРАВЛЕННЫЙ СИНТАКСИС
   @ManyToOne(() => Field)
   @JoinColumn({ name: 'fieldId' })
   field: Field;
 
   @Column()
-  type: string; // Например, 'Посев', 'Уборка урожая', 'Внесение удобрений'
+  type: string;
 
   @Column({ type: 'date' })
   date: string;

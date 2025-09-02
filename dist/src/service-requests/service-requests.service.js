@@ -6,27 +6,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FieldOperationsService = void 0;
+exports.ServiceRequestsService = void 0;
 const common_1 = require("@nestjs/common");
-let FieldOperationsService = class FieldOperationsService {
-    create(createFieldOperationDto) {
-        return 'This action adds a new fieldOperation';
+let ServiceRequestsService = class ServiceRequestsService {
+    create(createServiceRequestDto) {
+        return 'This action adds a new serviceRequest';
     }
     findAll() {
-        return `This action returns all fieldOperations`;
+        return `This action returns all serviceRequests`;
     }
     findOne(id) {
-        return `This action returns a #${id} fieldOperation`;
+        return `This action returns a #${id} serviceRequest`;
     }
-    update(id, updateFieldOperationDto) {
-        return `This action updates a #${id} fieldOperation`;
+    update(id, updateServiceRequestDto) {
+        return `This action updates a #${id} serviceRequest`;
     }
     remove(id) {
-        return `This action removes a #${id} fieldOperation`;
+        return `This action removes a #${id} serviceRequest`;
     }
 };
-exports.FieldOperationsService = FieldOperationsService;
-exports.FieldOperationsService = FieldOperationsService = __decorate([
+exports.ServiceRequestsService = ServiceRequestsService;
+exports.ServiceRequestsService = ServiceRequestsService = __decorate([
     (0, common_1.Injectable)()
-], FieldOperationsService);
-//# sourceMappingURL=field-operations.service.js.map
+], ServiceRequestsService);
+//# sourceMappingURL=service-requests.service.js.map
