@@ -4,6 +4,7 @@ export class InitialSetup1756835845788 implements MigrationInterface {
     name = 'InitialSetup1756835845788'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.query(`CREATE TABLE "users" ("telegramId" bigint NOT NULL, "firstName" character varying NOT NULL, "lastName" character varying, "username" character varying, "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "updatedAt" TIMESTAMP NOT NULL DEFAULT now(), CONSTRAINT "PK_b472e947593c3b0a70179a095f0" PRIMARY KEY ("telegramId"))`);
         await queryRunner.query(`CREATE TABLE "shops" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "name" character varying NOT NULL, "description" text, "logoUrl" character varying, "rating" double precision NOT NULL DEFAULT '0', "ownerId" bigint NOT NULL, "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "updatedAt" TIMESTAMP NOT NULL DEFAULT now(), CONSTRAINT "PK_3c6aaa6607d287de99815e60b96" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE TABLE "service_providers" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "name" character varying NOT NULL, "description" text, "logoUrl" character varying, "rating" double precision NOT NULL DEFAULT '0', "ownerId" bigint NOT NULL, "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "updatedAt" TIMESTAMP NOT NULL DEFAULT now(), CONSTRAINT "PK_73c86f1298c5285d76e66da2da9" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE TABLE "services" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "name" character varying NOT NULL, "category" character varying NOT NULL, "description" text, "imageUrl" character varying, "providerId" uuid NOT NULL, "createdAt" TIMESTAMP NOT NULL DEFAULT now(), "updatedAt" TIMESTAMP NOT NULL DEFAULT now(), CONSTRAINT "PK_ba2d347a3168a296416c6c5ccb2" PRIMARY KEY ("id"))`);
@@ -57,6 +58,7 @@ export class InitialSetup1756835845788 implements MigrationInterface {
         await queryRunner.query(`DROP TABLE "services"`);
         await queryRunner.query(`DROP TABLE "service_providers"`);
         await queryRunner.query(`DROP TABLE "shops"`);
+        await queryRunner.query(`DROP TABLE "users"`);
     }
 
 }
