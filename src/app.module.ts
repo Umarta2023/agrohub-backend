@@ -2,15 +2,26 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
+// Импорты базовых модулей
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
-// --- НАЧАЛО ИЗМЕНЕНИЙ ---
+
+// Импорты модулей ресурсов
 import { ShopsModule } from './shops/shops.module';
 import { ProductsModule } from './products/products.module';
-// ... здесь будут импорты остальных модулей
-// --- КОНЕЦ ИЗМЕНЕНИЙ ---
+import { AdsModule } from './ads/ads.module';
+import { ServiceProvidersModule } from './service-providers/service-providers.module';
+import { ServicesModule } from './services/services.module';
+import { FieldsModule } from './fields/fields.module';
+import { FieldOperationsModule } from './field-operations/field-operations.module';
+import { CropHistoryModule } from './crop-history/crop-history.module';
+import { ServiceRequestsModule } from './service-requests/service-requests.module';
+import { PurchasesModule } from './purchases/purchases.module';
+import { PurchasedItemsModule } from './purchased-items/purchased-items.module';
+import { AgroNotificationsModule } from './agro-notifications/agro-notifications.module';
 
 @Module({
   imports: [
@@ -18,7 +29,6 @@ import { ProductsModule } from './products/products.module';
       isGlobal: true,
       envFilePath: '.env',
     }),
-
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
@@ -28,20 +38,29 @@ import { ProductsModule } from './products/products.module';
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_DATABASE'),
+        // autoLoadEntities: true - хороший вариант, но давайте укажем явно
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        migrations: [__dirname + '/migrations/*{.ts,.js}'],
         synchronize: false, // Используем миграции
       }),
       inject: [ConfigService],
     }),
 
-    // Подключаем наши модули
+    // Регистрируем ВСЕ наши модули
     UsersModule,
     AuthModule,
-    // --- НАЧАЛО ИЗМЕНЕНИЙ ---
     ShopsModule,
     ProductsModule,
-    // ... здесь будут остальные модули
-    // --- КОНЕЦ ИЗМЕНЕНИЙ ---
+    AdsModule,
+    ServiceProvidersModule,
+    ServicesModule,
+    FieldsModule,
+    FieldOperationsModule,
+    CropHistoryModule,
+    ServiceRequestsModule,
+    PurchasesModule,
+    PurchasedItemsModule,
+    AgroNotificationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
