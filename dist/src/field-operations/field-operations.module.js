@@ -12,7 +12,6 @@ const field_operations_service_1 = require("./field-operations.service");
 const field_operations_controller_1 = require("./field-operations.controller");
 const typeorm_1 = require("@nestjs/typeorm");
 const field_operation_entity_1 = require("./entities/field-operation.entity");
-const fields_module_1 = require("../fields/fields.module");
 let FieldOperationsModule = class FieldOperationsModule {
 };
 exports.FieldOperationsModule = FieldOperationsModule;
@@ -20,7 +19,6 @@ exports.FieldOperationsModule = FieldOperationsModule = __decorate([
     (0, common_1.Module)({
         imports: [
             typeorm_1.TypeOrmModule.forFeature([field_operation_entity_1.FieldOperation]),
-            (0, common_1.forwardRef)(() => fields_module_1.FieldsModule),
         ],
         controllers: [field_operations_controller_1.FieldOperationsController],
         providers: [field_operations_service_1.FieldOperationsService],

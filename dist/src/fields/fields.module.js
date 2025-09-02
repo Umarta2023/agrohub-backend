@@ -16,6 +16,7 @@ let FieldsModule = class FieldsModule {
 };
 exports.FieldsModule = FieldsModule;
 exports.FieldsModule = FieldsModule = __decorate([
+    (0, common_1.Global)(),
     (0, common_1.Module)({
         imports: [typeorm_1.TypeOrmModule.forFeature([field_entity_1.Field])],
         controllers: [fields_controller_1.FieldsController],
