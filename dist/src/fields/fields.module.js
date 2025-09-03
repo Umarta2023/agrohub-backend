@@ -12,13 +12,20 @@ const fields_service_1 = require("./fields.service");
 const fields_controller_1 = require("./fields.controller");
 const typeorm_1 = require("@nestjs/typeorm");
 const field_entity_1 = require("./entities/field.entity");
+const users_module_1 = require("../users/users.module");
+const field_operations_module_1 = require("../field-operations/field-operations.module");
+const crop_history_module_1 = require("../crop-history/crop-history.module");
 let FieldsModule = class FieldsModule {
 };
 exports.FieldsModule = FieldsModule;
 exports.FieldsModule = FieldsModule = __decorate([
-    (0, common_1.Global)(),
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([field_entity_1.Field])],
+        imports: [
+            typeorm_1.TypeOrmModule.forFeature([field_entity_1.Field]),
+            users_module_1.UsersModule,
+            (0, common_1.forwardRef)(() => field_operations_module_1.FieldOperationsModule),
+            (0, common_1.forwardRef)(() => crop_history_module_1.CropHistoryModule),
+        ],
         controllers: [fields_controller_1.FieldsController],
         providers: [fields_service_1.FieldsService],
         exports: [fields_service_1.FieldsService],

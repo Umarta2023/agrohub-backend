@@ -1,17 +1,17 @@
-// src/field-operations/field-operations.module.ts
-import { Module } from '@nestjs/common'; // forwardRef больше не нужен
+import { Module, forwardRef } from '@nestjs/common';
 import { FieldOperationsService } from './field-operations.service';
 import { FieldOperationsController } from './field-operations.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FieldOperation } from './entities/field-operation.entity';
-// import { FieldsModule } from '../fields/fields.module'; // <-- УДАЛЯЕМ ЭТОТ ИМПОРТ
+import { FieldsModule } from 'src/fields/fields.module';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([FieldOperation]),
-    // forwardRef(() => FieldsModule), // <-- УДАЛЯЕМ ЭТО
+    forwardRef(() => FieldsModule), // Оборачиваем импорт в forwardRef
   ],
   controllers: [FieldOperationsController],
   providers: [FieldOperationsService],
+  exports: [FieldOperationsService], // Добавляем экспорт сервиса
 })
 export class FieldOperationsModule {}

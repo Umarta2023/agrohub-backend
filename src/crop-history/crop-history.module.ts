@@ -1,17 +1,17 @@
-// src/crop-history/crop-history.module.ts
-import { Module } from '@nestjs/common'; // forwardRef больше не нужен
+import { Module, forwardRef } from '@nestjs/common';
 import { CropHistoryService } from './crop-history.service';
 import { CropHistoryController } from './crop-history.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CropHistory } from './entities/crop-history.entity';
-// import { FieldsModule } from '../fields/fields.module'; // <-- УДАЛЯЕМ ЭТОТ ИМПОРТ
+import { FieldsModule } from 'src/fields/fields.module';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([CropHistory]),
-    // forwardRef(() => FieldsModule), // <-- УДАЛЯЕМ ЭТО
+    forwardRef(() => FieldsModule), // Оборачиваем импорт в forwardRef
   ],
   controllers: [CropHistoryController],
   providers: [CropHistoryService],
+  exports: [CropHistoryService], // Добавляем экспорт сервиса
 })
 export class CropHistoryModule {}
