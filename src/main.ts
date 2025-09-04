@@ -17,6 +17,7 @@ async function bootstrap() {
 
   // 2. Глобальный префикс для всех эндпоинтов (например, /api/v1/profile)
   app.setGlobalPrefix('api/v1');
+  app.enableCors();
 
   // 3. Глобальное использование ValidationPipe для автоматической валидации всех DTO
   app.useGlobalPipes(new ValidationPipe({
